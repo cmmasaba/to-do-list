@@ -1,5 +1,17 @@
+from google.cloud import firestore
+from google.cloud.firestore_v1.base_query import FieldFilter, And
 from pydantic import BaseModel
 from typing import Dict
+import os
+
+from dotenv import load_dotenv
+    
+load_dotenv()
+
+SA_FILE_PATH = os.getenv("SA_FILE_PATH")
+
+# Initialize Firestore client for database operations
+firestore_db = firestore.Client.from_service_account_json(SA_FILE_PATH)
 
 class TodoCreate(BaseModel):
     title: str
