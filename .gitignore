@@ -1,4 +1,5 @@
-firestore_iam.json
+firestore_sa.json
 config.py
 to-do-list.code-workspace
 todo/
+.env
