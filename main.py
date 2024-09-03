@@ -25,4 +25,4 @@ if __name__ == "__main__":
 
     HOST = os.getenv("HOST")
     PORT = os.getenv("PORT")
-    uvicorn.run("main:app", port=PORT, host=HOST, reload=True)
+    uvicorn.run("main:app", port=int(PORT), host=HOST, reload=True)
