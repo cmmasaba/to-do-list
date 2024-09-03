@@ -3,3 +3,4 @@ config.py
 to-do-list.code-workspace
 todo/
 .env
+__pycache__/
