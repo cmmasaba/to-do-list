@@ -10,4 +10,4 @@ firebase-admin==6.5.0
 google-auth==2.20.0
 pydantic==2.8.2
 gunicorn==23.0.0
-python-dotenv==1.0.1
+python-decouple==3.8
