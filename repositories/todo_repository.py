@@ -5,11 +5,13 @@ from typing import Dict
 import os
 from datetime import datetime
 
-from dotenv import load_dotenv
-    
-load_dotenv()
+from decouple import Config, RepositoryEnv
 
-SA_FILE_PATH = os.getenv("SA_FILE_PATH")
+# Get the right environment
+environment = os.getenv("ENVIRONMENT", "development")
+config = Config(RepositoryEnv(f".env.{environment}"))
+
+SA_FILE_PATH = config("SA_FILE_PATH")
 
 # Initialize Firestore client for database operations
 firestore_db = firestore.Client.from_service_account_json(SA_FILE_PATH)
